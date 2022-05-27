@@ -40,7 +40,7 @@ public class PostController {
 
     //GET POST
     @GetMapping("/{id}")
-    public ResponseEntity<PostDto> getPostById(@PathVariable(name = "id") long id){
+    public ResponseEntity<PostDto> getPostById(@PathVariable(value = "id") long id){
         return ResponseEntity.ok(postService.getPostById(id));
     }
 
@@ -52,7 +52,7 @@ public class PostController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deletePost(@PathVariable(name = "id") long id){
+    public ResponseEntity<String> deletePost(@PathVariable(value = "id") long id){
         postService.deletePostById(id);
         return new ResponseEntity<>("Post entity deleted successfully.", HttpStatus.OK);
     }
